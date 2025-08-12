@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Categorías</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style_categoria.css') }}">
+</head>
+<body>
+    <h2>Administrar Categorías</h2>
+
+    <form method="POST">
+        <label for="nombre">Nombre de la categoría:</label>
+        <input type="text" name="nombre" required>
+
+        <label for="descripcion">Descripción:</label>
+        <textarea name="descripcion" required></textarea>
+
+        <input type="submit" value="Crear Categoría">
+    </form>
+
+    <h3>Categorías existentes:</h3>
+    <ul>
+        {% for categoria in categorias %}
+            <li>
+                <strong>{{ categoria.nombre }}</strong><br>
+                {{ categoria.descripcion }}
+            </li>
+        {% else %}
+            <li>No hay categorías registradas aún.</li>
+        {% endfor %}
+    </ul>
+
+    <a href="{{ url_for('dashboard') }}">← Volver al Dashboard</a>
+</body>
+</html>

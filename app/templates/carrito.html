@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Carrito</title>
+</head>
+<body>
+    <h2>Carrito de Compras</h2>
+    {% for item in carrito %}
+        <p>{{ item.id }} - {{ item.nombre_producto }}</p>
+    {% endfor %}
+    
+    <a href="{{ url_for('productos.ver_productos') }}">Ir a Productos</a>
+</body>
+</html>
