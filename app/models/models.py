@@ -7,7 +7,7 @@ class Cliente(db.Model, UserMixin):
     id_clientes = db.Column(db.Integer, primary_key=True)
     nombre = db.Column(db.String(100), nullable=False)
     correo = db.Column(db.String(150), unique=True, nullable=False)
-    contrasena = db.Column(db.String(200), nullable=False)
+    contrasena = db.Column(db.String(160), nullable=False)
     telefono = db.Column(db.String(20))
     fecha_hora = db.Column(db.DateTime, default=datetime.utcnow)
 
@@ -20,7 +20,7 @@ class Admin(db.Model, UserMixin):
     id_admin = db.Column(db.Integer, primary_key=True)
     nombre = db.Column(db.String(100), nullable=False)
     correo = db.Column(db.String(150), unique=True, nullable=False)
-    contrasena = db.Column(db.String(200), nullable=False)
+    contrasena = db.Column(db.String(160), nullable=False)
     telefono = db.Column(db.String(20))
     fecha_hora = db.Column(db.DateTime, default=datetime.utcnow)
 
