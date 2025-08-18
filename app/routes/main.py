@@ -11,3 +11,13 @@ def home():
 @login_required
 def dashboard():
     return render_template('dashboard.html', usuario=current_user)
+
+@main_bp.route('/dashboard_admin')
+@login_required
+def dashboard_admin():
+    return render_template('dashboard/admin.html', usuario=current_user)
+
+@main_bp.route('/dashboard_clientes')
+@login_required
+def dashboard_cliente():
+    return render_template('dashboard/clientes.html', usuario=current_user)
